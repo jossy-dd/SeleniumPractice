@@ -10,7 +10,7 @@ public class WindowsActvities {
 		driver.get("http://google.com");
 		driver.navigate().to("https://rahulshettyacademy.com");
 		driver.navigate().back();
-		driver.navigate().forward();
+		driver.navigate().forward();	
 	}
 
 }
