@@ -10,6 +10,8 @@ public class UpdatedDropdown {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		//driver.get("https://www.spicejet.com/");
+		
+		//Checkbox
 		//Verify the checkbox is NOT selected
 		Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
@@ -17,6 +19,19 @@ public class UpdatedDropdown {
 		Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		//Count and print number of checkboxes
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
+		
+		//Radio button
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		//Verify if the second calendar now is enabled
+		//driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled();
+		if(driver.findElement(By.id("Div1")).getDomAttribute("style").contains("1"))
+		{
+			System.out.println("Its enabled");
+			Assert.assertTrue(true);
+		}else {
+			Assert.assertTrue(false);
+		}
+		
 		//dropdown list
 		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 		driver.findElement(By.id("divpaxinfo")).click();
